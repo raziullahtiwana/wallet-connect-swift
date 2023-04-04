@@ -8,7 +8,7 @@ let package = Package(
         .macOS(.v10_13),
     ],
     products: [
-        .library(name: "WalletConnectV1", targets: ["WalletConnect"]),
+        .library(name: "WalletConnectV1", targets: ["WalletConnectV1"]),
     ],
     dependencies: [
         .package(url: "https://github.com/krzyzanowskim/CryptoSwift", from: "1.1.0"),
@@ -17,7 +17,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "WalletConnect",
+            name: "WalletConnectV1",
             dependencies: ["CryptoSwift", "PromiseKit", "Starscream"],
             path: "WalletConnect"
         ),

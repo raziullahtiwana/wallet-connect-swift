@@ -39,7 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BB47674A236BB93600A9A9AF /* WalletConnect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WalletConnect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB47674A236BB93600A9A9AF /* WalletConnectV1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WalletConnectV1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB47674D236BB93600A9A9AF /* WalletConnect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WalletConnect.h; sourceTree = "<group>"; };
 		BB47674E236BB93600A9A9AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB476755236BB98300A9A9AF /* WCInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCInteractor.swift; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 		BB47674B236BB93600A9A9AF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BB47674A236BB93600A9A9AF /* WalletConnect.framework */,
+				BB47674A236BB93600A9A9AF /* WalletConnectV1.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -221,9 +221,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		BB476749236BB93600A9A9AF /* WalletConnect */ = {
+		BB476749236BB93600A9A9AF /* WalletConnectV1 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BB476752236BB93600A9A9AF /* Build configuration list for PBXNativeTarget "WalletConnect" */;
+			buildConfigurationList = BB476752236BB93600A9A9AF /* Build configuration list for PBXNativeTarget "WalletConnectV1" */;
 			buildPhases = (
 				BB476745236BB93600A9A9AF /* Headers */,
 				BB476746236BB93600A9A9AF /* Sources */,
@@ -234,9 +234,9 @@
 			);
 			dependencies = (
 			);
-			name = WalletConnect;
+			name = WalletConnectV1;
 			productName = WalletConnect;
-			productReference = BB47674A236BB93600A9A9AF /* WalletConnect.framework */;
+			productReference = BB47674A236BB93600A9A9AF /* WalletConnectV1.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -267,7 +267,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BB476749236BB93600A9A9AF /* WalletConnect */,
+				BB476749236BB93600A9A9AF /* WalletConnectV1 */,
 			);
 		};
 /* End PBXProject section */
@@ -509,7 +509,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BB476752236BB93600A9A9AF /* Build configuration list for PBXNativeTarget "WalletConnect" */ = {
+		BB476752236BB93600A9A9AF /* Build configuration list for PBXNativeTarget "WalletConnectV1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BB476753236BB93600A9A9AF /* Debug */,

@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BB476749236BB93600A9A9AF"
-               BuildableName = "WalletConnect.framework"
-               BlueprintName = "WalletConnect"
+               BuildableName = "WalletConnectV1.framework"
+               BlueprintName = "WalletConnectV1"
                ReferencedContainer = "container:WalletConnect.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -51,8 +51,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BB476749236BB93600A9A9AF"
-            BuildableName = "WalletConnect.framework"
-            BlueprintName = "WalletConnect"
+            BuildableName = "WalletConnectV1.framework"
+            BlueprintName = "WalletConnectV1"
             ReferencedContainer = "container:WalletConnect.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
