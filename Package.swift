@@ -2,18 +2,18 @@
 import PackageDescription
 
 let package = Package(
-    name: "WalletConnect",
+    name: "WalletConnectV1",
     platforms: [
         .iOS(.v11),
         .macOS(.v10_13),
     ],
     products: [
-        .library(name: "WalletConnect", targets: ["WalletConnect"]),
+        .library(name: "WalletConnectV1", targets: ["WalletConnect"]),
     ],
     dependencies: [
         .package(url: "https://github.com/krzyzanowskim/CryptoSwift", from: "1.1.0"),
         .package(url: "https://github.com/mxcl/PromiseKit", from: "6.8.0"),
-        .package(url: "https://github.com/daltoniam/Starscream", from: "3.0.0"),
+        .package(url: "https://github.com/daltoniam/Starscream", from: "3.1.1"),
     ],
     targets: [
         .target(
