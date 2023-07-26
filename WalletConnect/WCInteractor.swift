@@ -20,7 +20,7 @@ public enum WCInteractorState {
     case disconnected
 }
 
-open class WCInteractor: WebSocketDelegate {
+open class WCInteractor {
     public let session: WCSession
 
     public private(set) var state: WCInteractorState
@@ -66,41 +66,20 @@ open class WCInteractor: WebSocketDelegate {
         self.bnb = WCBinanceInteractor()
         self.trust = WCTrustInteractor()
         self.okt = WCOKExChainInteractor()
-        
-        socket.delegate = self
+
+        socket.onConnect = { [weak self] in self?.onConnect() }
+        socket.onDisconnect = { [weak self] error in self?.onDisconnect(error: error) }
+        socket.onText = { [weak self] text in self?.onReceiveMessage(text: text) }
+        socket.onPong = { _ in WCLog("<== pong") }
+        socket.onData = { data in WCLog("<== websocketDidReceiveData: \(data.toHexString())") }
     }
 
     deinit {
         disconnect()
     }
-    
-    public func didReceive(event: Starscream.WebSocketEvent, client: Starscream.WebSocket) {
-        switch event {
-        case .connected(_):
-            onConnect()
-        case .ping(_):
-            WCLog("<== pong")
-        case .pong(let data):
-            WCLog("<== websocketDidReceiveData: \(String(describing: data?.toHexString()))")
-        case .text(let text):
-            onReceiveMessage(text: text)
-        case .binary(let data):
-            WCLog("<== websocketDidReceiveData: \(data.toHexString())")
-        case .disconnected:
-            onDisconnect(error: nil)
-        case .error(let error):
-            onDisconnect(error: error)
-        case .viabilityChanged(_):
-            break
-        case .reconnectSuggested(_):
-            break
-        case .cancelled:
-            onDisconnect(error: nil)
-        }
-    }
-    
+
     open func connect() -> Promise<Bool> {
-        if state == .connected {
+        if socket.isConnected {
             return Promise.value(true)
         }
         socket.connect()
@@ -112,7 +91,7 @@ open class WCInteractor: WebSocketDelegate {
 
     open func pause() {
         state = .paused
-        socket.disconnect(closeCode: CloseCode.goingAway.rawValue)
+        socket.disconnect(forceTimeout: nil, closeCode: CloseCode.goingAway.rawValue)
     }
 
     open func resume() {
