@@ -74,7 +74,7 @@ open class WCInteractor: WebSocketDelegate {
         disconnect()
     }
     
-    public func didReceive(event: Starscream.WebSocketEvent, client: Starscream.WebSocket) {
+    public func didReceive(event: WebSocketEvent, client: WebSocketClient) {
         switch event {
         case .connected(_):
             onConnect()
@@ -96,6 +96,8 @@ open class WCInteractor: WebSocketDelegate {
             break
         case .cancelled:
             onDisconnect(error: nil)
+        case .peerClosed:
+            break
         }
     }
     
